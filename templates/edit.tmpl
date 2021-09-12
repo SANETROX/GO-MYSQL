@@ -1,0 +1,45 @@
+{{define "edit"}}
+{{template "base"}}
+
+
+<div class="card">
+    <div class="card-header">
+        Developers
+    </div>
+    
+    <div class="card-body">
+        <form method="post" action="/update">
+
+            <div class="form-group">
+                <label class="sr-only" for="inputName">ID</label>
+                <input type="text"  value="{{.Id}}" class="form-control" name="id" id="id" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="">Firstname</label>
+              <input type="text" value="{{.Name}}"
+                class="form-control" name="firstname" id="firstname" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu nombre</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Lastname</label>
+              <input type="text" value="{{.Lastname}}"
+                class="form-control" name="lastname" id="lastname" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu apellido</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Email</label>
+              <input type="text" value="{{.Email}}"
+                class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu email</small>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Editar developer</button>
+        </form>
+    </div>
+    
+</div>
+{{template "footer"}}
+{{end}}

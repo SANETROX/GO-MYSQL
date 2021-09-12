@@ -1,0 +1,33 @@
+{{define "index"}}
+{{template "base"}}
+    <a name="" id="" class="btn btn-primary" href="/create" role="button">Create Dev</a>
+    <a name="" id="" class="btn btn-primary" href="/reset-table" role="button">Reset Table</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Cargo</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{range.}}
+                <tr>
+                    <td>{{.Id}}</td>
+                    <td>{{.Name}}</td>
+                    <td>{{.Lastname}}</td>
+                    <td>{{.Email}}</td>
+                    <td>
+                        <a name="edit" id="edit" class="btn btn-warning" href="/edit?id={{.Id}}" role="button">Edit</a>
+                        <a name="delete" id="delete" class="btn btn-danger" href="/delete?id={{.Id}}" role="button">Delete</a>
+                    </td>
+                </tr>
+            {{end}}
+        </tbody>
+    </table>      
+
+{{template "footer" }}
+{{end}}
